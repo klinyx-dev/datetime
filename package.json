@@ -1,0 +1,19 @@
+{
+    "name": "@livo/datetime",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+      "build": "tsc -p tsconfig.json",
+      "dev": "tsc -p tsconfig.json --watch",
+      "test": "vitest"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "typescript": "^5.0.0",
+      "vitest": "^2.0.0"
+    }
+  }
