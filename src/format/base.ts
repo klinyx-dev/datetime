@@ -1,6 +1,12 @@
 import {addDays} from "../core/dateMath";
 
-function toDate(input: string | Date): Date {
+const DEFAULT_OPTIONS: Intl.DateTimeFormatOptions = {
+    hour12: false,
+    hour: "2-digit",
+    minute: "2-digit",
+}
+
+function toDate(input: string | Date | number): Date {
     return input instanceof Date ? input : new Date(input);
 }
 
@@ -9,9 +15,9 @@ export function formatDate(input: string | Date, locale: string, options: Intl.D
 }
 
 export function formatTime(
-    input: string | Date,
+    input: string | number | Date,
     locale: string,
-    options: Intl.DateTimeFormatOptions = { hour: "2-digit", minute: "2-digit" },
+    options: Intl.DateTimeFormatOptions = DEFAULT_OPTIONS,
 ): string {
     return toDate(input).toLocaleTimeString(locale, options);
 }
