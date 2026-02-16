@@ -15,6 +15,11 @@ export function getWeekStart(date: Date): Date {
     return new Date(d.getTime() - weekday * MS_PER_DAY);
 }
 
+export function getWeekEnd(date: Date): Date {
+    const start = getWeekStart(date);
+    return addDays(start, 6);
+}
+
 export function getWeekDays(date: Date): Date[] {
     const start = getWeekStart(date);
     return Array.from(
