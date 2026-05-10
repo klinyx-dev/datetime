@@ -1,4 +1,5 @@
 export * from "./core/dateMath";
+export * from "./core/iso";
 export * from "./core/week";
 export * from "./format/base";
 

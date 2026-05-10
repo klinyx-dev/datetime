@@ -14,12 +14,27 @@ export function formatDate(input: string | Date, locale: string, options: Intl.D
     return toDate(input).toLocaleDateString(locale, options);
 }
 
+export function formatDateDefault(input: string | Date): string {
+    return toDate(input).toLocaleDateString();
+}
+
 export function formatTime(
     input: string | number | Date,
     locale: string,
     options: Intl.DateTimeFormatOptions = DEFAULT_OPTIONS,
 ): string {
     return toDate(input).toLocaleTimeString(locale, options);
+}
+
+export function formatTimeDefault(input: string | number | Date): string {
+    return toDate(input).toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+    });
+}
+
+export function formatDateTimeDefault(input: string | number | Date): string {
+    return toDate(input).toLocaleString();
 }
 
 export function formatWeekRangeShort(start: Date, locale: string): string {

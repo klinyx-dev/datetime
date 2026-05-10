@@ -15,7 +15,8 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "vitest"
+    "prepare": "pnpm build",
+    "test": "vitest run"
   },
   "devDependencies": {
     "tsup": "^8.5.1",
